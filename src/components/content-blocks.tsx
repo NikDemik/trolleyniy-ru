@@ -9,7 +9,7 @@ import { Media } from "./media";
 import { StructuredData } from "./structured-data";
 
 export function ProductDirectionCard({ page, number }: { page: PageContent; number: number }) {
-  return <article className="group min-w-0 border border-border bg-white">
+  return <article className="group min-w-0 border border-border bg-surface transition-colors hover:border-[#4a5157]">
     {page.media && <Media asset={page.media} />}
     <div className="p-6"><p className="mb-5 font-mono text-xs text-muted-foreground">НАПРАВЛЕНИЕ / 0{number}</p><h3 className="text-2xl leading-tight font-semibold"><Link className="hover:text-primary" href={hrefFor(page.slug)}>{page.label}</Link></h3><p className="mt-4 text-sm leading-6 text-muted-foreground">{page.intro}</p><Link className="mt-6 inline-flex min-h-11 items-center gap-5 text-sm font-semibold text-primary" href={hrefFor(page.slug)}>О системе <Arrow /><span className="sr-only">: {page.label}</span></Link></div>
   </article>;
@@ -18,7 +18,7 @@ export function SolutionCard({ page, number }: { page: PageContent; number: numb
   return <article className="border-t border-border py-6"><Link href={hrefFor(page.slug)} className="group grid grid-cols-[2rem_1fr_auto] items-start gap-4"><span className="pt-1 font-mono text-sm text-muted-foreground">0{number}</span><div><h3 className="text-xl font-semibold group-hover:text-primary">{page.label}</h3><p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">{page.intro}</p></div><span className="text-xl text-primary"><Arrow /></span></Link></article>;
 }
 export function IndustryCard({ page }: { page: PageContent }) {
-  return <Link href={hrefFor(page.slug)} className="flex min-h-28 items-center justify-between gap-6 border border-border bg-white p-6 text-lg font-semibold hover:border-primary hover:text-primary">{page.label}<Arrow /></Link>;
+  return <Link href={hrefFor(page.slug)} className="flex min-h-28 items-center justify-between gap-6 border border-border bg-surface p-6 text-lg font-semibold uppercase tracking-wide hover:border-primary hover:text-accent">{page.label}<Arrow /></Link>;
 }
 export function Advantages() {
   return <Section title="Комплексная поставка систем токоподвода" eyebrow="Подход к работе"><div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">{advantages.map((item) => <article key={item.title} className="border-t border-border pt-6"><span aria-hidden="true" className="text-primary">✳</span><h3 className="mt-4 text-lg font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{item.text}</p></article>)}</div></Section>;

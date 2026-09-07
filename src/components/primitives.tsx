@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
 
 export function Container({ children, className }: { children: ReactNode; className?: string }) {
-  return <div className={cn("mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12", className)}>{children}</div>;
+  return <div className={cn("mx-auto w-full max-w-[1344px] px-[22px]", className)}>{children}</div>;
 }
 export function Section({ children, title, eyebrow, className, id }: { children: ReactNode; title?: string; eyebrow?: string; className?: string; id?: string }) {
-  return <section id={id} className={cn("py-14 sm:py-20", className)}><Container>
-    {(title || eyebrow) && <div className="mb-9 max-w-3xl">{eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}{title && <h2 className="section-title">{title}</h2>}</div>}{children}
+  return <section id={id} className={cn("relative overflow-hidden border-b border-border py-16 sm:py-20", className)}><Container>
+    {(title || eyebrow) && <div className="mb-10 max-w-4xl">{eyebrow && <p className="eyebrow mb-5">{eyebrow}</p>}{title && <h2 className="section-title">{title}</h2>}</div>}{children}
   </Container></section>;
 }
 export function Arrow({ external = false }: { external?: boolean }) { return <span aria-hidden="true">{external ? "↗" : "→"}</span>; }

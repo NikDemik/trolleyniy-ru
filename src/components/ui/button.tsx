@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 
 // shadcn/ui Button (Radix pattern), adapted to the corporate theme.
 export const buttonVariants = cva(
-  "inline-flex min-h-12 items-center justify-center gap-3 rounded-sm px-5 py-3 text-center text-sm font-semibold leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex min-h-12 items-center justify-center gap-3 rounded-none border px-6 py-3 text-center font-sans text-xs font-extrabold leading-5 tracking-[.13em] uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 disabled:pointer-events-none disabled:opacity-50",
   { variants: { variant: {
-    default: "bg-primary text-primary-foreground hover:bg-primary/90",
-    outline: "border border-current/30 bg-transparent hover:bg-current/5",
-    ghost: "hover:bg-muted",
+    default: "border-silver bg-silver text-ink hover:border-silver-bright hover:bg-silver-bright",
+    outline: "border-silver/70 bg-transparent text-silver-bright hover:border-silver-bright hover:bg-silver-bright hover:text-ink",
+    ghost: "border-transparent hover:border-border hover:bg-muted",
   } }, defaultVariants: { variant: "default" } },
 );
 

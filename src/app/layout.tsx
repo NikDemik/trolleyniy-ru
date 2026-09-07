@@ -1,4 +1,13 @@
 import type { Metadata } from "next";
+import "@fontsource/anton/400.css";
+import "@fontsource/archivo/400.css";
+import "@fontsource/archivo/500.css";
+import "@fontsource/archivo/600.css";
+import "@fontsource/archivo/700.css";
+import "@fontsource/archivo/800.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import "@fontsource/jetbrains-mono/700.css";
 import { Header } from "@/components/site-header";
 import { Footer } from "@/components/site-footer";
 import { company } from "@/config/company";

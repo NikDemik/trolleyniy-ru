@@ -16,7 +16,6 @@ export type PageContent = {
   faq?: FaqItem[];
   media?: MediaAsset;
   shopKey?: "trolley" | "mono" | "festoon";
-  series?: { name: string; description: string }[];
   form?: boolean;
 };
 export type ProjectCase = {

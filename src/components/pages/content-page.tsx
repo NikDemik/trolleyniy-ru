@@ -10,7 +10,6 @@ import { Media } from "../media";
 import { CatalogCTA, Comparison, ConfiguratorBlock, FAQ, IndustryCard, ProcessSteps, ProductDirectionCard, ProjectsBlock, RelatedLinks, SolutionCard } from "../content-blocks";
 import { CompanyDetails, CommercialDetails } from "../company-details";
 import { ContactForm } from "../contact-form";
-import { catalogLink } from "@/config/externalLinks";
 
 export function ContentPage({ slug }: { slug: string }) {
   const page = getPage(slug);
@@ -37,7 +36,6 @@ export function ContentPage({ slug }: { slug: string }) {
     {(slug === "kontakty" || slug === "o-kompanii") && <CompanyDetails />}
     {slug === "dostavka-i-oplata" && <CommercialDetails />}
     {slug === "garantiya" && <CommercialDetails warranty />}
-    {page.series && <Section title="Обзор направления ANNENG"><div className="grid gap-5 sm:grid-cols-2">{page.series.map((series) => <article key={series.name} className="border border-border p-6"><h3 className="text-xl font-semibold">{series.name}</h3><p className="my-5 leading-7 text-muted-foreground">{series.description}</p><ActionLink href={catalogLink(page.shopKey).href} external outline>Перейти в каталог ANNENG</ActionLink></article>)}</div></Section>}
     {page.faq && <FAQ items={page.faq} />}
     {(page.category === "product" || slug === "produkciya" || slug === "brands/anneng" || slug === "kontakty") && <CatalogCTA shopKey={page.shopKey} />}
     {page.form && <Section id="podbor" title={slug === "podbor-oborudovaniya" ? "Исходные данные для расчёта" : "Расскажите о вашей задаче"} eyebrow="Инженерный подбор" className="border-t border-border"><div className="max-w-4xl"><ContactForm extended={slug === "podbor-oborudovaniya"} /></div></Section>}
