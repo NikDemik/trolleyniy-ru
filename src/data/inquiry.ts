@@ -1,0 +1,11 @@
+export const equipmentOptions = ["Мостовой кран", "Козловой кран", "Кран-балка", "Электротельфер", "Монорельс", "Производственная линия", "Другое"];
+export const systemOptions = ["Не знаю", "Троллейный шинопровод", "Монотроллей", "Фестонная система"];
+export const inquiryFields = [
+  { name: "current", label: "Рабочий ток, А", type: "number", min: "0.01", max: "100000", step: "any", extended: false },
+  { name: "length", label: "Длина трассы, м", type: "number", min: "0.01", max: "100000", step: "any", extended: false },
+  { name: "voltage", label: "Напряжение, В", type: "number", min: "0.01", max: "1000000", step: "any", extended: true },
+  { name: "consumers", label: "Количество потребителей", type: "number", min: "1", max: "10000", step: "1", extended: true },
+  { name: "speed", label: "Скорость, м/мин", type: "number", min: "0", max: "10000", step: "any", extended: true },
+  { name: "temperature", label: "Температура, °C", type: "number", min: "-273.15", max: "2000", step: "any", extended: true },
+] as const;
+// Ограничения ввода — защита формы от ошибочных/аномальных данных, не характеристики продукции.

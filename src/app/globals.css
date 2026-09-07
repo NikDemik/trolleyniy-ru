@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #17231e;
+  --primary: #286847;
+  --primary-foreground: #ffffff;
+  --accent: #9dcca9;
+  --muted: #f0f3f1;
+  --muted-foreground: #5e6a64;
+  --border: #dce3de;
+  --surface: #f3f5f3;
+  --ink: #13251e;
+  --destructive: #a52222;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-destructive: var(--destructive);
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+@layer base {
+  body { background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.65; }
+  main { flex: 1; min-width: 0; }
+  h1, h2, h3 { overflow-wrap: anywhere; hyphens: auto; }
+  button, summary { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  ::selection { background: var(--accent); color: var(--ink); }
+  :focus-visible { outline: 2px solid #438660; outline-offset: 4px; }
+  [hidden] { display: none !important; }
+}
+@layer components {
+  .eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .section-title { font-size: clamp(1.8rem, 3.2vw, 2.8rem); line-height: 1.15; font-weight: 600; letter-spacing: -.025em; }
+  .technical-panel { display: flex; flex-direction: column; justify-content: center; overflow: hidden; background-color: #192e24; color: #a0bdad; background-image: linear-gradient(#ffffff06 1px, transparent 1px), linear-gradient(90deg, #ffffff06 1px, transparent 1px); background-size: 28px 28px; }
+  .field { display: block; width: 100%; min-width: 0; min-height: 3rem; border: 1px solid #bac7be; border-radius: 2px; padding: .7rem .8rem; background: white; color: var(--foreground); font-size: 1rem; }
+  .field[aria-invalid="true"] { border-color: var(--destructive); }
+  .field::placeholder { color: #6b766f; }
+  .form-label { display: block; margin-bottom: .5rem; font-size: .875rem; font-weight: 600; }
+  .form-error { margin-top: .5rem; font-size: .875rem; color: var(--destructive); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
