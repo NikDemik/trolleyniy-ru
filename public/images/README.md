@@ -5,6 +5,7 @@
 рендерятся через next/image с зарезервированными пропорциями.
 
 Рекомендуемые пути после получения согласованных файлов:
+
 - /images/hero/production.webp
 - /images/products/trolley.webp
 - /images/products/mono.webp

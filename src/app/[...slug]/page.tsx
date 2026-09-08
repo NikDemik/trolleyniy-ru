@@ -5,7 +5,9 @@ import { ContentPage } from "@/components/pages/content-page";
 
 type Props = { params: Promise<{ slug: string[] }> };
 export const dynamicParams = false;
-export function generateStaticParams() { return pages.map((page) => ({ slug: page.slug.split("/") })); }
+export function generateStaticParams() {
+  return pages.map((page) => ({ slug: page.slug.split("/") }));
+}
 export async function generateMetadata({ params }: Props) {
   const page = getPage((await params).slug.join("/"));
   if (!page) notFound();

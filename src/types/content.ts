@@ -1,5 +1,9 @@
 export type ContentLink = { label: string; href: string };
-export type MediaAsset = { src: string | null; alt: string; kind: "rail" | "mono" | "festoon" | "industrial" };
+export type MediaAsset = {
+  src: string | null;
+  alt: string;
+  kind: "rail" | "mono" | "festoon" | "industrial";
+};
 export type ContentSection = { title: string; text: string; points?: string[] };
 export type FaqItem = { question: string; answer: string };
 export type PageContent = {

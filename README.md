@@ -56,25 +56,25 @@ Production: npm run build, затем npm start.
 
 ## Архитектура и основные файлы
 
-| Путь | Назначение |
-| --- | --- |
-| src/app/page.tsx, src/app/[...slug]/page.tsx | Только подключение страниц, статические параметры и metadata |
-| src/app/layout.tsx, globals.css | Общая оболочка и Tailwind-тема |
-| src/app/sitemap.ts, robots.ts, not-found.tsx | SEO-маршруты и 404 |
-| src/app/api/inquiry/route.ts | Подключение обработчика формы |
-| src/components/pages | Разметка и сборка главной, внутренних страниц, 404 |
-| src/components/site-header.tsx, site-footer.tsx, mobile-menu.tsx | Общая навигация |
-| src/components/content-blocks.tsx, primitives.tsx, hero.tsx, media.tsx | Переиспользуемые секции и визуальные компоненты |
-| src/components/contact-form.tsx, file-upload.tsx, ui | Формы и локальные shadcn/ui-компоненты |
-| src/components/breadcrumbs.tsx, structured-data.tsx, company-details.tsx | Крошки, JSON-LD, контакты |
-| src/data/products.ts, solutions.ts, industries.ts, pages.ts | Независимый контент страниц |
-| src/data/common.ts, inquiry.ts, registry.ts | Общие данные, поля формы и единый реестр |
-| src/config/company.ts | Компания, документы, юридические ссылки и коммерческие условия |
-| src/config/externalLinks.ts, navigation.ts, inquiry.ts | Внешние адреса, навигация и ограничения формы |
-| src/types | Контентные типы и контракт формы |
-| src/lib/seo.ts, utils.ts | SEO и утилиты оформления |
-| src/lib/inquiry-validation.ts, inquiry-handler.ts | Клиентская/серверная проверка и граница будущей интеграции |
-| scripts/verify-site.mjs | Проверка маршрутов, SEO, ссылок, API и кодировки |
+| Путь                                                                     | Назначение                                                     |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| src/app/page.tsx, src/app/[...slug]/page.tsx                             | Только подключение страниц, статические параметры и metadata   |
+| src/app/layout.tsx, globals.css                                          | Общая оболочка и Tailwind-тема                                 |
+| src/app/sitemap.ts, robots.ts, not-found.tsx                             | SEO-маршруты и 404                                             |
+| src/app/api/inquiry/route.ts                                             | Подключение обработчика формы                                  |
+| src/components/pages                                                     | Разметка и сборка главной, внутренних страниц, 404             |
+| src/components/site-header.tsx, site-footer.tsx, mobile-menu.tsx         | Общая навигация                                                |
+| src/components/content-blocks.tsx, primitives.tsx, hero.tsx, media.tsx   | Переиспользуемые секции и визуальные компоненты                |
+| src/components/contact-form.tsx, file-upload.tsx, ui                     | Формы и локальные shadcn/ui-компоненты                         |
+| src/components/breadcrumbs.tsx, structured-data.tsx, company-details.tsx | Крошки, JSON-LD, контакты                                      |
+| src/data/products.ts, solutions.ts, industries.ts, pages.ts              | Независимый контент страниц                                    |
+| src/data/common.ts, inquiry.ts, registry.ts                              | Общие данные, поля формы и единый реестр                       |
+| src/config/company.ts                                                    | Компания, документы, юридические ссылки и коммерческие условия |
+| src/config/externalLinks.ts, navigation.ts, inquiry.ts                   | Внешние адреса, навигация и ограничения формы                  |
+| src/types                                                                | Контентные типы и контракт формы                               |
+| src/lib/seo.ts, utils.ts                                                 | SEO и утилиты оформления                                       |
+| src/lib/inquiry-validation.ts, inquiry-handler.ts                        | Клиентская/серверная проверка и граница будущей интеграции     |
+| scripts/verify-site.mjs                                                  | Проверка маршрутов, SEO, ссылок, API и кодировки               |
 
 Старый src/config/site.ts удалён после переноса в company.ts.
 package.json, package-lock.json и next.config.ts обновлены; TypeScript и ESLint
@@ -88,6 +88,7 @@ package.json, package-lock.json и next.config.ts обновлены; TypeScript
 Допускается один PDF, PNG, JPG, DOCX или XLSX до 5 МБ.
 
 Обработчик:
+
 - ограничивает размер тела до разбора multipart, включая поток без Content-Length;
 - проверяет Origin/Sec-Fetch-Site, honeypot, время заполнения и дубликаты полей;
 - проверяет значения полей, расширение и начальную сигнатуру файла;
@@ -99,6 +100,7 @@ HTTP 200 / ok:true сейчас недостижим. UI успеха подго
 Между обновлениями страницы черновик не сохраняется.
 
 Перед подключением реальной доставки:
+
 1. Утвердить получателя, серверный email/CRM-адаптер и обработку повторных запросов.
 2. Подготовить реальные юридические документы и основание обработки данных.
 3. Добавить распределённое ограничение частоты на инфраструктуре сервера.
@@ -129,6 +131,7 @@ src/config/externalLinks.ts. Пока ссылки подписаны как о�
 ## Верификация
 
 verify проверяет:
+
 - 25 HTML-страниц, уникальные title/description/canonical;
 - один H1, корректный домен Open Graph, Organization/WebSite/BreadcrumbList;
 - все внутренние ссылки, HTTP 200 маршрутов, HTTP 404 неизвестного пути;

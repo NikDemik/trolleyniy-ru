@@ -24,7 +24,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ru" className="h-full antialiased">
       <body className="flex min-h-dvh flex-col">
-        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-6 focus:z-50 focus:bg-background focus:p-4">Перейти к содержимому</a>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-6 focus:z-50 focus:bg-background focus:p-4"
+        >
+          Перейти к содержимому
+        </a>
         <StructuredData data={organizationSchema()} />
         <StructuredData data={websiteSchema()} />
         <Header />
@@ -34,4 +39,3 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
-
