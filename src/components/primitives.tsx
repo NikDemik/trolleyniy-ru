@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
 
 export function Container({ children, className }: { children: ReactNode; className?: string }) {
-  return <div className={cn("mx-auto w-full max-w-[1344px] px-[22px]", className)}>{children}</div>;
+  return <div className={cn("mx-auto w-full max-w-[2400px] px-[clamp(22px,2vw,64px)]", className)}>{children}</div>;
 }
 export function Section({ children, title, eyebrow, className, id }: { children: ReactNode; title?: string; eyebrow?: string; className?: string; id?: string }) {
   return <section id={id} className={cn("relative overflow-hidden border-b border-border py-16 sm:py-20", className)}><Container>
