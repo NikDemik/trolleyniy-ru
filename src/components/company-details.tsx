@@ -47,7 +47,12 @@ export function CompanyDetails() {
           <ul className="mt-4 space-y-3">
             {company.documents.map((doc) => (
               <li key={doc.href}>
-                <a className="text-primary underline" href={doc.href}>
+                <a
+                  className="text-primary underline"
+                  href={doc.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {doc.label}
                 </a>
               </li>

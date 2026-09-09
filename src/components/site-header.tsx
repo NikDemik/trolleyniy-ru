@@ -29,7 +29,7 @@ export function Header() {
             <rect x="11" y="1" width="8" height="4" rx="1" stroke="#4fc48d" strokeWidth="1.4" />
           </svg>
           <span className="font-display text-xl leading-none tracking-wide">
-            ТРОЛЛЕЙНЫЙ
+            ТРОЛЛЕЙНЫЙ ШИНОПРОВОД
             <span className="mt-1 block font-mono text-[7px] font-medium tracking-[.22em] text-white/45">
               СИСТЕМЫ ТОКОПОДВОДА
             </span>

@@ -30,7 +30,7 @@ export function HomePage() {
           <div className="grid w-full items-center gap-10 lg:grid-cols-[1.2fr_.8fr]">
             <div className="hero-plate min-w-0 max-w-4xl p-6 sm:p-8">
               <p className="eyebrow mb-6 text-accent">Инженерный подход к движению</p>
-              <h1 className="max-w-4xl text-[clamp(2rem,4.8vw,4.8rem)] leading-[.96] text-silver-bright">
+              <h1 className="max-w-4xl text-[clamp(2rem,3.8vw,4rem)] leading-[.96] text-silver-bright">
                 {homeSeo.h1}
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/60">
