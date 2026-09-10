@@ -33,7 +33,7 @@ export function HomeHero() {
   const product = products[active];
 
   return (
-    <section className="industrial-grid relative isolate min-h-[calc(100svh-64px)] overflow-hidden border-b border-border bg-ink text-white sm:min-h-[680px]">
+    <section className="industrial-grid relative isolate min-h-[max(620px,calc(100svh-100px))] w-screen max-w-none overflow-hidden border-b border-border bg-ink text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_42%,rgba(31,122,82,.2),transparent_31%),linear-gradient(90deg,#08090a_0%,rgba(8,9,10,.82)_48%,rgba(8,9,10,.18)_100%)]" />
       <AnimatePresence mode="wait">
         <motion.div
@@ -53,11 +53,11 @@ export function HomeHero() {
         Промышленные системы токоподвода · инженерный подбор · Россия
       </div>
 
-      <Container className="relative z-10 flex min-h-[calc(100svh-64px)] items-end pb-24 pt-24 sm:min-h-[680px]">
+      <div className="absolute left-8 bottom-19.5 z-10 flex min-h-[max(620px,calc(100svh-100px))] items-end pb-24 pt-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            className="hero-plate w-full max-w-[760px] px-6 py-7 sm:px-8 sm:py-8"
+            className="hero-plate w-full max-w-190 px-6 py-7 sm:px-8 sm:py-8"
             initial={reducedMotion ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
@@ -66,7 +66,7 @@ export function HomeHero() {
             <p className="mb-4 font-mono text-[11px] tracking-[.23em] text-accent uppercase">
               0{active + 1} / {slideLabels[active]}
             </p>
-            <h1 className="max-w-3xl text-[clamp(2.8rem,7.3vw,6.7rem)] leading-[.92] text-silver-bright">
+            <h1 className="max-w-3xl text-[clamp(2.8rem,7.3vw,4rem)] leading-[.92] text-silver-bright">
               {product.h1}
             </h1>
             <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-white/65">
@@ -80,9 +80,9 @@ export function HomeHero() {
             </div>
           </motion.div>
         </AnimatePresence>
-      </Container>
+      </div>
 
-      <div className="absolute bottom-16 right-[22px] z-20 flex items-center gap-3 max-sm:bottom-5">
+      <div className="absolute bottom-16 right-5.5 z-20 flex items-center gap-3 max-sm:bottom-5">
         <button
           className="hero-control"
           type="button"
@@ -113,7 +113,7 @@ export function HomeHero() {
       {!reducedMotion && (
         <motion.span
           key={`progress-${active}`}
-          className="absolute inset-x-0 bottom-0 z-20 h-[3px] origin-left bg-accent"
+          className="absolute inset-x-0 bottom-0 z-20 h-0.75 origin-left bg-accent"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: slideDuration / 1000, ease: "linear" }}

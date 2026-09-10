@@ -6,6 +6,7 @@ import { company } from "@/config/company";
 import { navigation } from "@/config/navigation";
 import { Container } from "./primitives";
 import { MobileMenu } from "./mobile-menu";
+import { externalLinks } from "@/config/externalLinks";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,6 +22,14 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-30 border-b text-white backdrop-blur-xl transition-colors duration-300 ${scrolled ? "border-border bg-[rgba(10,11,12,.94)]" : "border-transparent bg-[rgba(10,11,12,.58)]"}`}
     >
+      <div className="hidden border-b border-white/10 sm:block">
+        <Container className="flex items-center justify-between gap-6 py-1.5 font-mono text-[10px] tracking-wider text-white/50">
+          <span>{company.distributorStatement}</span>
+          <a className="hover:text-white" href={externalLinks.catalog}>
+            Каталог ANNENG ↗ · отдельный сайт
+          </a>
+        </Container>
+      </div>
       <Container className="flex min-h-16 items-center justify-between gap-5">
         <Link
           href="/"

@@ -1,6 +1,7 @@
 "use client";
 import { useId, useRef, useState, type FormEvent } from "react";
 import { inquiryConfig } from "@/config/inquiry";
+import { legalConfig, legalLinks } from "@/config/legal";
 import { equipmentOptions, inquiryFields, systemOptions } from "@/data/inquiry";
 import { validateInquiry } from "@/lib/inquiry-validation";
 import type { InquiryErrors, InquiryResult, InquiryValues } from "@/types/inquiry";
@@ -94,6 +95,7 @@ export function ContactForm({ extended = false }: { extended?: boolean }) {
         </p>
       </noscript>
       <input type="hidden" name="startedAt" value={startedAt} />
+      <input type="hidden" name="consentVersion" value={legalConfig.version} />
       <div className="hidden" aria-hidden="true">
         <label htmlFor={`${id}-website`}>
           Ваш сайт
@@ -216,6 +218,40 @@ export function ContactForm({ extended = false }: { extended?: boolean }) {
           </div>
         </div>
       </fieldset>
+      <div className="space-y-3 border-t border-border pt-5">
+        <label htmlFor={`${id}-consent`} className="flex items-start gap-3 text-sm leading-6">
+          <input
+            {...attributes("consent")}
+            type="checkbox"
+            value="accepted"
+            required
+            disabled={status === "pending" || status === "success"}
+            className="mt-1 h-5 w-5 shrink-0 accent-primary"
+          />
+          <span>Даю согласие на обработку персональных данных для рассмотрения заявки.</span>
+        </label>
+        {error("consent")}
+        <p className="text-sm leading-6 text-muted-foreground">
+          <a
+            href={legalLinks.consent.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary underline underline-offset-4"
+          >
+            Текст согласия<span className="sr-only"> (в новой вкладке)</span>
+          </a>
+          {" · "}
+          <a
+            href={legalLinks.processing.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary underline underline-offset-4"
+          >
+            Политика обработки персональных данных
+            <span className="sr-only"> (в новой вкладке)</span>
+          </a>
+        </p>
+      </div>
       <Button type="submit" disabled={status === "pending" || status === "success"}>
         {status === "pending"
           ? "Отправка…"

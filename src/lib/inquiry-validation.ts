@@ -1,9 +1,17 @@
 import { inquiryConfig } from "../config/inquiry";
+import { legalConfig } from "../config/legal";
 import { equipmentOptions, systemOptions, inquiryFields } from "../data/inquiry";
 import type { InquiryValues, InquiryErrors, FileInfo } from "../types/inquiry";
 
 export function validateInquiry(values: InquiryValues, file?: FileInfo | null): InquiryErrors {
   const errors: InquiryErrors = {};
+  if (values.consent !== "accepted") {
+    errors.consent =
+      "Для отправки заявки необходимо ваше согласие на обработку персональных данных.";
+  } else if (values.consentVersion !== legalConfig.version) {
+    errors.consent =
+      "Текст согласия обновился. Обновите страницу и ознакомьтесь с актуальной редакцией.";
+  }
   const name = values.name?.trim() ?? "";
   if (name.length < 2 || name.length > 100) errors.name = "Укажите имя от 2 до 100 символов.";
   const email = values.email?.trim() ?? "";

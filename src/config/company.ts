@@ -1,3 +1,5 @@
+import { legalLinks } from "./legal";
+
 // TODO: заполнить и подтвердить перед запуском. null никогда не отображается как реквизит.
 export const company = {
   companyName: "Троллейный шинопровод",
@@ -28,7 +30,7 @@ export const company = {
       href: "/documents/distributor-authorization-anneng.pdf",
     },
   ] as { label: string; href: string }[],
-  legalLinks: [] as { label: string; href: string }[],
+  legalLinks: Object.values(legalLinks),
 };
 
 export const commercialTerms = {

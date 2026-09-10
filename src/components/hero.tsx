@@ -15,10 +15,10 @@ export function Hero({
 }) {
   return (
     <section className="industrial-grid relative overflow-hidden border-b border-border py-[clamp(4.5rem,8vw,7rem)]">
-      <div aria-hidden="true" className="section-watermark right-[-2rem] top-[-2rem]">
+      <div aria-hidden="true" className="section-watermark -right-8 -top-8">
         01
       </div>
-      <Container className="relative z-[1]">
+      <Container className="relative z-1">
         <Reveal className="hero-plate max-w-5xl p-6 sm:p-9">
           {eyebrow && <p className="eyebrow mb-5 text-accent">{eyebrow}</p>}
           <h1 className="max-w-4xl text-[clamp(2.7rem,6.8vw,6.5rem)] leading-[.94] text-silver-bright">
