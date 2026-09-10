@@ -1,21 +1,26 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { company } from "@/config/company";
-import { externalLinks } from "@/config/externalLinks";
 import { navigation } from "@/config/navigation";
 import { Container } from "./primitives";
 import { MobileMenu } from "./mobile-menu";
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 10);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-[rgba(10,11,12,.92)] text-white backdrop-blur-xl">
-      <div className="hidden border-b border-white/10 sm:block">
-        <Container className="flex items-center justify-between gap-6 py-1.5 font-mono text-[10px] tracking-wider text-white/50">
-          <span>{company.distributorStatement}</span>
-          <a className="hover:text-white" href={externalLinks.catalog}>
-            Каталог ANNENG ↗ · отдельный сайт
-          </a>
-        </Container>
-      </div>
+    <header
+      className={`fixed inset-x-0 top-0 z-30 border-b text-white backdrop-blur-xl transition-colors duration-300 ${scrolled ? "border-border bg-[rgba(10,11,12,.94)]" : "border-transparent bg-[rgba(10,11,12,.58)]"}`}
+    >
       <Container className="flex min-h-16 items-center justify-between gap-5">
         <Link
           href="/"
@@ -35,13 +40,9 @@ export function Header() {
             </span>
           </span>
         </Link>
-        <nav aria-label="Основная навигация" className="hidden items-center gap-0 xl:flex">
+        <nav aria-label="Основная навигация" className="ml-auto hidden items-center xl:flex">
           {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="relative px-3 py-3 font-mono text-[11px] font-semibold tracking-[.1em] text-white/65 uppercase hover:text-white after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:bg-primary after:transition-transform hover:after:scale-x-100"
-            >
+            <Link key={item.href} href={item.href} className="nav-link">
               {item.label}
             </Link>
           ))}
@@ -49,16 +50,13 @@ export function Header() {
         <div className="hidden items-center gap-4 xl:flex">
           {company.phone && (
             <a
-              className="font-mono text-xs text-white/65"
+              className="font-mono text-xs text-white/65 hover:text-white"
               href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}
             >
               {company.phone}
             </a>
           )}
-          <Link
-            href="/podbor-oborudovaniya/"
-            className="border border-silver/70 px-4 py-2 font-sans text-[11px] font-extrabold tracking-[.12em] uppercase hover:bg-silver-bright hover:text-ink"
-          >
+          <Link href="/podbor-oborudovaniya/" className="btn-mini">
             Подбор ↗
           </Link>
         </div>
