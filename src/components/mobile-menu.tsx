@@ -32,7 +32,7 @@ export function MobileMenu() {
       <div
         id="mobile-navigation"
         hidden={!open}
-        className="fixed inset-x-0 bottom-0 top-[65px] z-40 overflow-y-auto border-t border-border bg-ink p-6 sm:top-[89px]"
+        className="fixed inset-x-0 bottom-0 top-[65px] z-40 overflow-y-auto border-t border-border bg-ink p-6"
       >
         {open && (
           <motion.nav
