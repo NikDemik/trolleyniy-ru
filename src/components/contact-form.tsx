@@ -82,7 +82,7 @@ export function ContactForm({ extended = false }: { extended?: boolean }) {
       onFocusCapture={() => {
         if (!startedAt) setStartedAt(Date.now());
       }}
-      className="space-y-6"
+      className="ym-hide-content space-y-6"
       aria-label="Форма инженерного подбора"
     >
       <p className="border-l-2 border-primary bg-surface p-4 text-sm leading-6">

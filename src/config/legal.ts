@@ -11,8 +11,8 @@ export const legalLinks = {
 } as const;
 
 export const legalConfig = {
-  version: "2026-09-10",
-  versionLabel: "10 сентября 2026 года",
+  version: "2026-09-11",
+  versionLabel: "11 сентября 2026 года",
   inquiryEmail: "zapros@trolleyniy.ru",
   inquiryRetention: "не более одного года с даты получения обращения",
 } as const;

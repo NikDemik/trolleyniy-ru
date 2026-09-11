@@ -12,6 +12,7 @@ import { Header } from "@/components/site-header";
 import { Footer } from "@/components/site-footer";
 import { company } from "@/config/company";
 import { StructuredData } from "@/components/structured-data";
+import { CookieBanner } from "@/components/cookie-banner";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         {children}
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

@@ -21,7 +21,7 @@ export function Hero({
       <Container className="relative z-1">
         <Reveal className="hero-plate max-w-5xl p-6 sm:p-9">
           {eyebrow && <p className="eyebrow mb-5 text-accent">{eyebrow}</p>}
-          <h1 className="max-w-4xl text-[clamp(2.7rem,6.8vw,6.5rem)] leading-[.94] text-silver-bright">
+          <h1 className="max-w-4xl text-[clamp(2.7rem,6.8vw,5rem)] leading-[.94] text-silver-bright">
             {title}
           </h1>
           <p className="mt-7 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">

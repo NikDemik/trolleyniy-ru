@@ -4,6 +4,7 @@ import { externalLinks } from "@/config/externalLinks";
 import { footerGroups } from "@/config/navigation";
 import { getPage, hrefFor } from "@/data/registry";
 import { Container } from "./primitives";
+import { CookieSettingsButton } from "./cookie-banner";
 
 export function Footer() {
   return (
@@ -56,6 +57,7 @@ export function Footer() {
           <a href={externalLinks.catalog} rel="external" className="hover:text-white">
             Каталог ANNENG ↗ · отдельный интернет-магазин
           </a>
+          <CookieSettingsButton />
           {company.legalLinks.map((link) => (
             <a key={link.href} href={link.href}>
               {link.label}
