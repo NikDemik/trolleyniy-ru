@@ -21,6 +21,7 @@ import {
 } from "../content-blocks";
 import { CompanyDetails, CommercialDetails } from "../company-details";
 import { ContactForm } from "../contact-form";
+import { BlogNews } from "../blog-news";
 
 export function ContentPage({ slug }: { slug: string }) {
   const page = getPage(slug);
@@ -123,6 +124,7 @@ export function ContentPage({ slug }: { slug: string }) {
       )}
       {slug === "podbor-oborudovaniya" && <ConfiguratorBlock />}
       {slug === "proekty" && <ProjectsBlock standalone />}
+      {slug === "blog" && <BlogNews />}
       {(slug === "kontakty" || slug === "o-kompanii") && <CompanyDetails />}
       {slug === "dostavka-i-oplata" && <CommercialDetails />}
       {slug === "garantiya" && <CommercialDetails warranty />}

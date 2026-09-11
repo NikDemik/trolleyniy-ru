@@ -56,4 +56,3 @@ export const comparison = [
 ];
 // Только подтверждённые кейсы. Карточки не создаются из демонстрационных данных.
 export const projects: ProjectCase[] = [];
-export const plannedSections = ["proizvodstvo", "blog"] as const;

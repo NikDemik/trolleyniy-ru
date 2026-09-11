@@ -4,6 +4,7 @@ export const navigation = [
   { label: "Отрасли", href: "/otrasli/" },
   { label: "Проекты", href: "/proekty/" },
   { label: "О компании", href: "/o-kompanii/" },
+  { label: "Новости", href: "/blog/" },
   { label: "Контакты", href: "/kontakty/" },
 ];
 export const footerGroups = [
@@ -24,6 +25,9 @@ export const footerGroups = [
       "resheniya/proizvodstvennye-linii",
     ],
   },
-  { title: "Компания", slugs: ["o-kompanii", "proekty", "brands", "brands/anneng", "kontakty"] },
+  {
+    title: "Компания",
+    slugs: ["o-kompanii", "blog", "proekty", "brands", "brands/anneng", "kontakty"],
+  },
   { title: "Покупателям", slugs: ["podbor-oborudovaniya", "dostavka-i-oplata", "garantiya"] },
 ];

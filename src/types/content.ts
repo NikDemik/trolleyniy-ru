@@ -34,3 +34,10 @@ export type ProjectCase = {
   photos: MediaAsset[];
   related: string[];
 };
+
+export type NewsItem = {
+  title: string;
+  summary: string;
+  kind: "Видео" | "Интервью" | "Компания" | "Поставки";
+  sourceUrl: string;
+};

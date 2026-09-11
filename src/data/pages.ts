@@ -165,6 +165,19 @@ export const corePages: PageContent[] = [
     related: ["brands/anneng", "produkciya", "kontakty"],
   },
   {
+    slug: "blog",
+    label: "Новости",
+    category: "company",
+    h1: "Новости компании",
+    title: "Новости ООО «Троллейный шинопровод» и ANNENG",
+    description:
+      "Новости ООО «Троллейный шинопровод», материалы ANNENG, обзоры монтажа и информация о поставках систем токоподвода.",
+    intro:
+      "Публикации о развитии продуктового направления ANNENG в России, поставках и практической работе с системами токоподвода.",
+    sections: [],
+    related: ["o-kompanii", "brands/anneng", "produkciya"],
+  },
+  {
     slug: "dostavka-i-oplata",
     label: "Доставка и оплата",
     category: "company",

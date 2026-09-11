@@ -23,7 +23,7 @@ Production: npm run build, затем npm start.
 
 ## Реализовано
 
-- 25 публичных страниц: Server Components, предварительная статическая генерация.
+- 26 публичных страниц: Server Components, предварительная статическая генерация.
 - Общие Header, Footer, Breadcrumbs, Container, Section, Hero, CTA,
   ProductDirectionCard, SolutionCard, IndustryCard, Advantages, ProcessSteps,
   ContactForm, FileUpload, FAQ и RelatedLinks.
@@ -49,10 +49,9 @@ Production: npm run build, затем npm start.
   skladskaya-logistika/, promyshlennaya-avtomatizaciya/.
 - /brands/ и /brands/anneng/.
 - /podbor-oborudovaniya/, /proekty/, /o-kompanii/, /dostavka-i-oplata/,
-  /garantiya/, /kontakty/.
+  /garantiya/, /kontakty/, /blog/.
 
-/proizvodstvo/ и /blog/ зарезервированы концептуально в data/common.ts.
-Пустые страницы не созданы и в sitemap не включены.
+Новости компании и материалы ANNENG размещаются в /blog/.
 
 ## Архитектура и основные файлы
 
@@ -133,7 +132,7 @@ src/config/externalLinks.ts. Пока ссылки подписаны как о�
 
 verify проверяет:
 
-- 25 HTML-страниц, уникальные title/description/canonical;
+- 26 HTML-страниц, уникальные title/description/canonical;
 - один H1, корректный домен Open Graph, Organization/WebSite/BreadcrumbList;
 - все внутренние ссылки, HTTP 200 маршрутов, HTTP 404 неизвестного пути;
 - состав sitemap и robots;
