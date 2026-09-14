@@ -7,6 +7,7 @@ import { navigation } from "@/config/navigation";
 import { Container } from "./primitives";
 import { MobileMenu } from "./mobile-menu";
 import { externalLinks } from "@/config/externalLinks";
+import Image from "next/image";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +37,13 @@ export function Header() {
           aria-label={`${company.legalName} — главная`}
           className="flex shrink-0 items-center gap-3"
         >
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <Image
+            src="/images/logo/logo-anneng-white.svg"
+            alt={company.legalName}
+            width={200}
+            height={30}
+          />
+          {/* <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
             <rect x="3" y="7" width="24" height="3.2" fill="#c7ccd1" />
             <rect x="3" y="13.4" width="24" height="3.2" fill="#c7ccd1" />
             <rect x="3" y="19.8" width="24" height="3.2" fill="#1f7a52" />
@@ -47,7 +54,7 @@ export function Header() {
             <span className="mt-1 block font-mono text-[7px] font-medium tracking-[.22em] text-white/45">
               СИСТЕМЫ ТОКОПОДВОДА
             </span>
-          </span>
+          </span> */}
         </Link>
         <nav aria-label="Основная навигация" className="ml-auto hidden items-center xl:flex">
           {navigation.map((item) => (
