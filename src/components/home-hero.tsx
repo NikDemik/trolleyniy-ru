@@ -57,7 +57,7 @@ export function HomeHero() {
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            className="hero-plate w-full max-w-190 px-6 py-7 sm:px-8 sm:py-8"
+            className="hero-plate w-full max-w-200 px-6 py-7 sm:px-8 sm:py-8"
             initial={reducedMotion ? false : { opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
@@ -66,7 +66,7 @@ export function HomeHero() {
             <p className="mb-4 font-mono text-[11px] tracking-[.23em] text-accent uppercase">
               0{active + 1} / {slideLabels[active]}
             </p>
-            <h1 className="max-w-3xl text-[clamp(2.8rem,7.3vw,4rem)] leading-[.92] text-silver-bright">
+            <h1 className="max-w-3xl text-[clamp(2rem,7.3vw,5rem)] sm:font-bold leading-[.92] text-silver-bright">
               {product.h1}
             </h1>
             <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-white/65">

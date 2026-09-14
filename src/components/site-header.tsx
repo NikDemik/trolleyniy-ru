@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { company } from "@/config/company";
 import { navigation } from "@/config/navigation";
 import { Container } from "./primitives";
@@ -11,6 +12,7 @@ import Image from "next/image";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 10);
@@ -58,7 +60,14 @@ export function Header() {
         </Link>
         <nav aria-label="Основная навигация" className="ml-auto hidden items-center xl:flex">
           {navigation.map((item) => (
-            <Link key={item.href} href={item.href} className="nav-link">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="nav-link"
+              aria-current={
+                pathname.replace(/\/$/, "") === item.href.replace(/\/$/, "") ? "page" : undefined
+              }
+            >
               {item.label}
             </Link>
           ))}
