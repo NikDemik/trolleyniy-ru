@@ -2,7 +2,7 @@
 
 Корпоративный сайт ООО «Троллейный шинопровод». Next.js 16 App Router, TypeScript strict,
 Tailwind CSS 4, локальные компоненты shadcn/ui и Framer Motion для мобильного меню.
-База данных и ORM не подключены согласно текущему этапу проекта.
+База данных и ORM не используются: контент хранится в типизированных файлах проекта.
 
 ## Запуск и проверки
 
@@ -35,7 +35,7 @@ NEXT_PUBLIC_YANDEX_METRIKA_ID=12345678
 
 ## Реализовано
 
-- 26 публичных страниц: Server Components, предварительная статическая генерация.
+- 29 публичных страниц: Server Components, предварительная статическая генерация.
 - Общие Header, Footer, Breadcrumbs, Container, Section, Hero, CTA,
   ProductDirectionCard, SolutionCard, IndustryCard, Advantages, ProcessSteps,
   ContactForm, FileUpload, FAQ и RelatedLinks.

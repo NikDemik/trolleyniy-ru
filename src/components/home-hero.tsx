@@ -8,7 +8,7 @@ import { externalLinks } from "@/config/externalLinks";
 import { products } from "@/data/products";
 import { hrefFor } from "@/data/registry";
 import { Media } from "./media";
-import { ActionLink, Container } from "./primitives";
+import { ActionLink } from "./primitives";
 
 const slideLabels = ["Закрытая линия", "Отдельные полюса", "Кабельный токоподвод"];
 const slideDuration = 5600;
