@@ -2,7 +2,7 @@ import { company } from "@/config/company";
 import { products } from "@/data/products";
 import { solutions } from "@/data/solutions";
 import { industries } from "@/data/industries";
-import { processSteps } from "@/data/common";
+import { advantagesCounter } from "@/data/common";
 import { Container, Section, ActionLink } from "../primitives";
 import { AnimatedCounter, Reveal } from "../animated";
 import { HomeHero } from "../home-hero";
@@ -60,17 +60,13 @@ export function HomePage() {
       <section className="border-b border-border">
         <Container>
           <Reveal className="grid grid-cols-1 sm:grid-cols-3">
-            {[
-              [products.length, "типа токоподвода"],
-              [solutions.length, "типов оборудования"],
-              [processSteps.length, "этапов комплектации"],
-            ].map(([value, label], index) => (
-              <div key={label} className={`stat-block ${index === 0 ? "sm:border-l-0" : ""}`}>
+            {advantagesCounter.map(({ title, unit, text }, index) => (
+              <div key={text} className={`stat-block ${index === 0 ? "sm:border-l-0" : ""}`}>
                 <div className="stat-number">
-                  <AnimatedCounter value={Number(value)} />
-                  <i>+</i>
+                  <AnimatedCounter value={Number(title.replaceAll(" ", ""))} locale="ru-RU" />
+                  <i>{unit}+</i>
                 </div>
-                <p>{label}</p>
+                <p>{text}</p>
               </div>
             ))}
           </Reveal>

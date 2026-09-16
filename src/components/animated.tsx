@@ -35,7 +35,7 @@ export function Reveal({
   );
 }
 
-export function AnimatedCounter({ value }: { value: number }) {
+export function AnimatedCounter({ value, locale }: { value: number; locale?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
   const reducedMotion = useReducedMotion();
@@ -56,5 +56,5 @@ export function AnimatedCounter({ value }: { value: number }) {
     return () => cancelAnimationFrame(frame);
   }, [inView, reducedMotion, value]);
 
-  return <span ref={ref}>{reducedMotion ? value : display}</span>;
+  return <span ref={ref}>{(reducedMotion ? value : display).toLocaleString(locale)}</span>;
 }
